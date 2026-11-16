@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+agent-network/data/state.json
+agent-network/data/state.tmp

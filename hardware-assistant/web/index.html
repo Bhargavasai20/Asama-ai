@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111a16">
+  <title>Machine / Hardware Assistant</title>
+  <link rel="stylesheet" href="/web/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/"><span class="brand-icon">◈</span> machine<span>/</span></a>
+      <div class="workspace-label">LOCAL WORKSPACE</div>
+      <div class="machine-card"><span class="machine-icon">⌘</span><div><strong>This laptop</strong><small id="platform-label">Checking platform…</small></div><span class="online-dot"></span></div>
+      <div class="sidebar-rule"></div>
+      <div class="workspace-label">INSPECTION TOOLS</div>
+      <div id="tool-list" class="tool-list"><span class="loading">Loading tools…</span></div>
+      <div class="privacy-card"><span>◆</span><div><strong>Private by default</strong><p>Hardware data stays on this device. Optional model mode only uses your configured endpoint.</p></div></div>
+      <div class="sidebar-bottom"><span class="lock-icon">▣</span> Read-only system access</div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><span class="breadcrumb">Workspace</span><span class="slash">/</span><strong>Hardware assistant</strong></div><span class="mode-badge"><span></span> OFFLINE MODE</span></header>
+      <section class="conversation">
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon">◈</div>
+          <p class="overline">YOUR LOCAL HARDWARE GUIDE</p>
+          <h1>Know your machine.<br><em>Ask anything.</em></h1>
+          <p class="welcome-description">Answers come from your Windows or Linux hardware reports—not guesses. Choose a question to get started.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-question="How much RAM do I have?"><span>▤</span><span><strong>How much RAM do I have?</strong><small>Installed and currently available memory</small></span><b>↗</b></button>
+            <button class="suggestion" data-question="Is my SSD NVMe?"><span>▱</span><span><strong>Is my SSD NVMe?</strong><small>Disk type, capacity and transport</small></span><b>↗</b></button>
+            <button class="suggestion" data-question="What GPU do I have?"><span>▧</span><span><strong>What GPU do I have?</strong><small>Display adapters found on this machine</small></span><b>↗</b></button>
+            <button class="suggestion" data-question="Can I add more RAM?"><span>⊞</span><span><strong>Can I add more RAM?</strong><small>Check memory slots and firmware details</small></span><b>↗</b></button>
+          </div>
+        </div>
+        <div id="messages" class="messages" aria-live="polite"></div>
+      </section>
+      <footer class="chat-footer">
+        <form id="chat-form" class="chat-form">
+          <textarea id="message-input" rows="1" maxlength="2000" placeholder="Ask about your hardware…" required></textarea>
+          <button id="send-button" type="submit" aria-label="Send message">↑</button>
+        </form>
+        <div class="footer-note"><span class="lock-icon">▣</span> Read-only checks · No arbitrary commands · <span id="mode-note">Offline intent mode</span></div>
+      </footer>
+    </main>
+  </div>
+  <script src="/web/app.js" defer></script>
+</body>
+</html>
